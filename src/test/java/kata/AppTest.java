@@ -48,7 +48,7 @@ class AppTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the sixth day of Christmas,
+            On the sixth day of Christmas
             My true love gave to me:
             Six geese a-laying
             Five golden rings
@@ -57,7 +57,7 @@ class AppTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the seventh day of Christmas,
+            On the seventh day of Christmas
             My true love gave to me:
             Seven swans a-swimming
             Six geese a-laying
@@ -67,7 +67,7 @@ class AppTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the eight day of Christmas,
+            On the eight day of Christmas
             My true love gave to me:
             Eight maids a-milking
             Seven swans a-swimming
@@ -78,7 +78,7 @@ class AppTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the ninth day of Christmas,
+            On the ninth day of Christmas
             My true love gave to me:
             Nine ladies dancing
             Eight maids a-milking
@@ -90,7 +90,7 @@ class AppTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the tenth day of Christmas,
+            On the tenth day of Christmas
             My true love gave to me:
             Ten lords a-leaping
             Nine ladies dancing
@@ -103,7 +103,7 @@ class AppTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the eleventh day of Christmas,
+            On the eleventh day of Christmas
             My true love gave to me:
             Eleven pipers piping
             Ten lords a-leaping
@@ -117,7 +117,7 @@ class AppTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the Twelfth day of Christmas,
+            On the Twelfth day of Christmas
             My true love gave to me:
             Twelve drummers drumming
             Eleven pipers piping
