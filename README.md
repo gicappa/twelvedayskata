@@ -1,2 +1,2 @@
 # twelvedayscarol
-Code Kata of the Twelve Days Carlo
+Code Kata of the Twelve Days Carol
