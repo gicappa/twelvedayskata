@@ -2,6 +2,8 @@ package kata;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -13,7 +15,18 @@ class AppTest {
     void it_returns_the_whole_song() {
         var app = new App();
 
-        assertThat(app.xmasSong()).isEqualTo(twelveDaysSong());
+        var actual = collectStdOut(app);
+
+        assertThat(actual).isEqualTo(twelveDaysSong());
+    }
+
+    private static String collectStdOut(Runnable app) {
+        var out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        app.run();
+
+        return out.toString();
     }
 
     String twelveDaysSong() {
