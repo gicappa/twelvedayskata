@@ -13,7 +13,7 @@ class AppTest {
 
     @Test
     void it_returns_the_whole_song() {
-        var app = new App();
+        var app = new App(new Song());
 
         var actual = collectStdOut(app);
 

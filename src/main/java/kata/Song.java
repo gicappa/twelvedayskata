@@ -9,7 +9,7 @@ public class Song {
     // for a missing class
     // I extracted the method with the test still red.
     // I should find a better way to do it
-    String generateSong() {
+    String lyrics() {
         return "Hello World!";
     }
 }

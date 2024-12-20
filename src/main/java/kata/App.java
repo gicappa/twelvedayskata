@@ -6,28 +6,26 @@ package kata;
  */
 public class App implements Runnable {
 
+    private final Song song;
 
-    private final Song song = new Song();
-
-    public App() {
+    public App(Song song) {
+        this.song = song;
     }
 
-    @Override
-    public void run() {
-        System.out.println(generateSong());
-    }
 
-    // To address the smell I created a class out of the private
-    // method.
+    // Using the object instead of the private method.
+    // Passing the object to the constructor to help
+    // testability and decoupling.
     //
     // I extracted the method with the test still red.
     // I should find a better way to do it
-    private String generateSong() {
-        return song.generateSong();
+    @Override
+    public void run() {
+        System.out.println(song.lyrics());
     }
 
     public static void main(String[] args) {
-        var app = new App();
+        var app = new App(new Song());
 
         app.run();
     }
