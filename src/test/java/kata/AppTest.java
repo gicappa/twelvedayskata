@@ -13,11 +13,11 @@ class AppTest {
 
     @Test
     void it_returns_the_whole_song() {
-        var app = new App(new Song());
+        var app = new App(() -> "my great song!");
 
         var actual = collectStdOut(app);
 
-        assertThat(actual).isEqualTo(twelveDaysSong());
+        assertThat(actual).isEqualTo("my great song!\n");
     }
 
     private static String collectStdOut(Runnable app) {

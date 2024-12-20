@@ -25,7 +25,7 @@ public class App implements Runnable {
     }
 
     public static void main(String[] args) {
-        var app = new App(new Song());
+        var app = new App(()-> "my actual implementation");
 
         app.run();
     }

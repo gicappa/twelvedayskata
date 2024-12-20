@@ -1,15 +1,11 @@
 package kata;
 
-public class Song {
 
-    public Song() {
-    }
-
-    // This method extracted is private and this is a smell
-    // for a missing class
-    // I extracted the method with the test still red.
-    // I should find a better way to do it
-    String lyrics() {
-        return "Hello World!";
-    }
+// I tried to use a lambda to implement this
+// single method object and the code suggested me
+// transform Song into an interface to be a functional
+// interface. Let's do it!
+@FunctionalInterface
+interface Song {
+    String lyrics();
 }
