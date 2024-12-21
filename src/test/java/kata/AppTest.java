@@ -20,7 +20,7 @@ class AppTest {
         assertThat(actual).isEqualTo("my great song!\n");
     }
 
-    private static String collectStdOut(Runnable app) {
+    private String collectStdOut(Runnable app) {
         var out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
@@ -29,6 +29,7 @@ class AppTest {
         return out.toString();
     }
 
+    @SuppressWarnings("unused")
     String twelveDaysSong() {
         return """
             On the first day of Christmas

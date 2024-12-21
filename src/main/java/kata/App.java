@@ -1,7 +1,7 @@
 package kata;
 
 /**
- * Starting point of the application contaning the
+ * Starting point of the application containing the
  * main function.
  */
 public class App implements Runnable {
