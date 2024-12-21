@@ -6,6 +6,6 @@ package kata;
 // transform Song into an interface to be a functional
 // interface. Let's do it!
 @FunctionalInterface
-interface Song {
+public interface Song {
     String lyrics();
 }

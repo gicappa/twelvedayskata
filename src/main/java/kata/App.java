@@ -4,11 +4,11 @@ package kata;
  * Starting point of the application containing the
  * main function.
  */
-public class App implements Runnable {
+class App implements Runnable {
 
     private final Song song;
 
-    public App(Song song) {
+    App(Song song) {
         this.song = song;
     }
 
