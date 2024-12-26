@@ -8,19 +8,33 @@ class TwelveDaysSong implements Song {
     }
 
     public String verse(int verseNumber) {
-        if (verseNumber ==1) {
-            return """
-                On the first day of Christmas
-                My true love gave to me:
-                A partridge in a pear tree.
-                """;
+
+        if (verseNumber == 1) {
+            return firstLine("first") + getFirstVerse() + lastLine();
         } else {
-            return """
-                On the second day of Christmas
-                My true love gave to me:
-                Two turtle doves and
-                A partridge in a pear tree.
-                """;
+            return firstLine("second") + getSecondVerse() + lastLine();
         }
+    }
+
+    private String getSecondVerse() {
+        return """
+            My true love gave to me:
+            Two turtle doves and
+            """;
+    }
+
+    private String getFirstVerse() {
+        return """
+            My true love gave to me:
+            """;
+    }
+
+    private String firstLine(String ordinal) {
+        return "On the %s day of Christmas\n".formatted(ordinal);
+
+    }
+
+    private static String lastLine() {
+        return "A partridge in a pear tree.\n";
     }
 }
