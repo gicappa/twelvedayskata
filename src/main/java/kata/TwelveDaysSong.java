@@ -1,6 +1,13 @@
 package kata;
 
+import java.util.Map;
+
 class TwelveDaysSong implements Song {
+
+    private final Map<String, String> verses = Map.of(
+        "first", "A partridge in a pear tree.\n",
+        "second", "Two turtle doves and\n"
+    );
 
     @Override
     public String lyrics() {
@@ -10,31 +17,23 @@ class TwelveDaysSong implements Song {
     public String verse(int verseNumber) {
 
         if (verseNumber == 1) {
-            return firstLine("first") + getFirstVerse() + lastLine();
+            return getFirstLine("first") +
+                getSecondLine() +
+                verses.get("first");
         } else {
-            return firstLine("second") + getSecondVerse() + lastLine();
+            return getFirstLine("second") +
+                getSecondLine() +
+                verses.get("second") +
+                verses.get("first");
         }
     }
 
-    private String getSecondVerse() {
-        return """
-            My true love gave to me:
-            Two turtle doves and
-            """;
-    }
-
-    private String getFirstVerse() {
-        return """
-            My true love gave to me:
-            """;
-    }
-
-    private String firstLine(String ordinal) {
+    private String getFirstLine(String ordinal) {
         return "On the %s day of Christmas\n".formatted(ordinal);
-
     }
 
-    private static String lastLine() {
-        return "A partridge in a pear tree.\n";
+    private String getSecondLine() {
+        return "My true love gave to me:\n";
     }
+
 }
