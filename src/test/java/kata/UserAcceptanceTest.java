@@ -15,7 +15,7 @@ class UserAcceptanceTest {
 
     @Test
     void it_returns_the_whole_song() {
-        var app = new App();
+        var app = new App(null);
 
         var actual = collectStdOut(app);
 
