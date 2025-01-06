@@ -6,18 +6,23 @@ import static org.mockito.Mockito.when;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class AppTest {
 
+    private App app;
+
+    @BeforeEach
+    void beforeEach() {
+        var song = mock(Song.class);
+        when(song.lyrics()).thenReturn("test string");
+        app = new App(song);
+
+    }
+
     @Test
     void it_displays_the_computed_song() {
-        var song = mock(Song.class);
-
-        when(song.lyrics()).thenReturn("test string");
-
-        var app = new App(song);
-
         var actual = collectStdOut(app);
 
         assertThat(actual).isEqualTo("test string\n");
