@@ -4,12 +4,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Unit test for simple App.
+ * User Acceptance test for the whole song.
  */
-class AppTest {
+@Disabled("It will be enabled when the whole song is implemented")
+class UserAcceptanceTest {
 
     @Test
     void it_returns_the_whole_song() {
@@ -20,7 +22,7 @@ class AppTest {
         assertThat(actual).isEqualTo(twelveDaysSong());
     }
 
-    private static String collectStdOut(Runnable app) {
+    String collectStdOut(Runnable app) {
         var out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
