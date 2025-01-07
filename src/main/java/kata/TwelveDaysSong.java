@@ -32,28 +32,36 @@ public class TwelveDaysSong implements Song {
 
     private String giftNumber(int giftNumber) {
         return List.of(
-                "A partridge in a pear tree.",
-                "Two turtle doves and",
-                "Three french hens",
-                "Four calling birds",
-                "Five golden rings",
-                "Six geese a-laying",
-                "Seven swans a-swimming",
-                "Eight maids a-milking",
-                "Nine ladies dancing",
-                "Ten lords a-leaping",
-                "Eleven pipers piping",
-                "Twelve drummers drumming")
-            .get(giftNumber - 1);
+                new Day("first", "A partridge in a pear tree."),
+                new Day("second", "Two turtle doves and"),
+                new Day("third", "Three french hens"),
+                new Day("forth", "Four calling birds"),
+                new Day("fifth", "Five golden rings"),
+                new Day("sixth", "Six geese a-laying"),
+                new Day("seventh", "Seven swans a-swimming"),
+                new Day("eighth", "Eight maids a-milking"),
+                new Day("ninth", "Nine ladies dancing"),
+                new Day("tenth", "Ten lords a-leaping"),
+                new Day("eleventh", "Eleven pipers piping"),
+                new Day("twelfth", "Twelve drummers drumming"))
+            .get(giftNumber - 1).gift();
     }
 
     private String toOrdinal(int cardinal) {
         return List.of(
-                "first", "second", "third",
-                "forth", "fifth", "sixth",
-                "seventh", "eighth", "ninth",
-                "tenth", "eleventh", "twelfth")
-            .get(cardinal - 1);
+                new Day("first", "A partridge in a pear tree."),
+                new Day("second", "Two turtle doves and"),
+                new Day("third", "Three french hens"),
+                new Day("forth", "Four calling birds"),
+                new Day("fifth", "Five golden rings"),
+                new Day("sixth", "Six geese a-laying"),
+                new Day("seventh", "Seven swans a-swimming"),
+                new Day("eighth", "Eight maids a-milking"),
+                new Day("ninth", "Nine ladies dancing"),
+                new Day("tenth", "Ten lords a-leaping"),
+                new Day("eleventh", "Eleven pipers piping"),
+                new Day("twelfth", "Twelve drummers drumming"))
+            .get(cardinal - 1).ordinal();
     }
 
 }
