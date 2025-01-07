@@ -56,7 +56,7 @@ public class TwelveDaysSong implements Song {
             case 9 -> "ninth";
             case 10 -> "tenth";
             case 11 -> "eleventh";
-            case 120 -> "twelfth";
+            case 12 -> "twelfth";
             default -> "";
         };
     }
