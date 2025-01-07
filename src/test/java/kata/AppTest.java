@@ -22,6 +22,15 @@ class AppTest {
     }
 
     @Test
+    void it_displays_in_stdout_what_returned_by_song_lyrics() {
+        var actual = collectStdOut(() -> App.main(null));
+
+        var expected = new TwelveDaysSong().lyrics() + "\n";
+
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
     void it_displays_the_computed_song() {
         var actual = collectStdOut(app);
 
@@ -36,5 +45,4 @@ class AppTest {
 
         return out.toString();
     }
-
 }
