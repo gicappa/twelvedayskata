@@ -1,12 +1,17 @@
 package kata;
 
+import static java.util.stream.Collectors.joining;
+
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class TwelveDaysSong implements Song {
 
     @Override
     public String lyrics() {
-        return lyrics(1);
+        return IntStream.rangeClosed(1, 12)
+            .mapToObj(this::lyrics)
+            .collect(joining("\n\n"));
     }
 
     @Override

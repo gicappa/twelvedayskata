@@ -53,4 +53,10 @@ class TwelveDaysSongTest {
         }
     }
 
+    @Test
+    void ensure_new_lines_among_verses() {
+        var actual = song.lyrics();
+
+        assertThat(actual).contains("\n\n");
+    }
 }
