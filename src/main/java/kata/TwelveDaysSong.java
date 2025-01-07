@@ -18,24 +18,19 @@ public class TwelveDaysSong implements Song {
     public String verse(int number) {
         return """
             On the %s day of Christmas
-            My true love gave to me:
-            %s""".formatted(dayNumber(number), allGiftsUntilDay(number));
+            My true love gave to me:%s""".formatted(day(number).ordinal(), allGiftsUntilDay(number));
+    }
+
+    private static Day day(int number) {
+        return getDays().get(number - 1);
     }
 
     private String allGiftsUntilDay(int dayNumber) {
-        if (dayNumber == 1) {
-            return giftNumber(dayNumber);
+        if (dayNumber == 0) {
+            return "";
         }
 
-        return giftNumber(dayNumber) + "\n" + allGiftsUntilDay(dayNumber - 1);
-    }
-
-    private String giftNumber(int giftNumber) {
-        return getDays().get(giftNumber - 1).gift();
-    }
-
-    private String dayNumber(int cardinal) {
-        return getDays().get(cardinal - 1).ordinal();
+        return "\n" + day(dayNumber).gift() + allGiftsUntilDay(dayNumber - 1);
     }
 
     private static List<Day> getDays() {
