@@ -19,7 +19,7 @@ public class TwelveDaysSong implements Song {
         return """
             On the %s day of Christmas
             My true love gave to me:
-            %s""".formatted(toOrdinal(number), allGiftsUntilDay(number));
+            %s""".formatted(dayNumber(number), allGiftsUntilDay(number));
     }
 
     private String allGiftsUntilDay(int dayNumber) {
@@ -34,7 +34,7 @@ public class TwelveDaysSong implements Song {
         return getDays().get(giftNumber - 1).gift();
     }
 
-    private String toOrdinal(int cardinal) {
+    private String dayNumber(int cardinal) {
         return getDays().get(cardinal - 1).ordinal();
     }
 
