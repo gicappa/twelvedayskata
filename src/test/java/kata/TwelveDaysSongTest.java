@@ -35,7 +35,6 @@ class TwelveDaysSongTest {
     }
 
     @Test
-    @Disabled
     void it_returns_the_third_verse() {
         var actual = song.lyrics(3);
 

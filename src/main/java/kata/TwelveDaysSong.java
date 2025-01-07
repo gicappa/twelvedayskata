@@ -21,6 +21,7 @@ public class TwelveDaysSong implements Song {
         return switch (verseNum) {
             case 1 -> "A partridge in a pear tree.";
             case 2 -> "Two turtle doves and\nA partridge in a pear tree.";
+            case 3 -> "Three french hens\nTwo turtle doves and\nA partridge in a pear tree.";
             default -> "";
         };
     }
@@ -29,6 +30,7 @@ public class TwelveDaysSong implements Song {
         return switch (verseNum) {
             case 1 -> "first";
             case 2 -> "second";
+            case 3 -> "third";
             default -> "";
         };
     }
