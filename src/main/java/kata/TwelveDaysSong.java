@@ -1,5 +1,7 @@
 package kata;
 
+import java.util.List;
+
 public class TwelveDaysSong implements Song {
 
     @Override
@@ -19,11 +21,18 @@ public class TwelveDaysSong implements Song {
 
     private String numSongLines(int verseNum) {
         return switch (verseNum) {
-            case 1 -> "A partridge in a pear tree.";
-            case 2 -> "Two turtle doves and\n" + numSongLines(1);
-            case 3 -> "Three french hens\n" + numSongLines(2);
+            case 1 -> giftList().get(0);
+            case 2 -> giftList().get(1) + "\n" + numSongLines(1);
+            case 3 -> giftList().get(2) + "\n" + numSongLines(2);
             default -> "";
         };
+    }
+
+    private List<String> giftList() {
+        return List.of(
+            "A partridge in a pear tree.",
+            "Two turtle doves and",
+            "Three french hens");
     }
 
     private String toOrdinal(int cardinal) {
