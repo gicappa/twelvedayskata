@@ -20,8 +20,8 @@ public class TwelveDaysSong implements Song {
     private String numSongLines(int verseNum) {
         return switch (verseNum) {
             case 1 -> "A partridge in a pear tree.";
-            case 2 -> "Two turtle doves and\nA partridge in a pear tree.";
-            case 3 -> "Three french hens\nTwo turtle doves and\nA partridge in a pear tree.";
+            case 2 -> "Two turtle doves and\n" + numSongLines(1);
+            case 3 -> "Three french hens\n" + numSongLines(2);
             default -> "";
         };
     }
