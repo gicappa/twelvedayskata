@@ -4,20 +4,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
  * User Acceptance test for the whole song.
  */
-@Disabled("It will be enabled when the whole song is implemented")
 class UserAcceptanceTest {
 
     @Test
     void it_returns_the_whole_song() {
-        var app = new App(null);
-
-        var actual = collectStdOut(app);
+        var actual = collectStdOut(() -> App.main(null));
 
         assertThat(actual).isEqualTo(twelveDaysSong());
     }
@@ -82,7 +78,7 @@ class UserAcceptanceTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the eight day of Christmas
+            On the eighth day of Christmas
             My true love gave to me:
             Eight maids a-milking
             Seven swans a-swimming
@@ -132,7 +128,7 @@ class UserAcceptanceTest {
             Two turtle doves and
             A partridge in a pear tree.
             
-            On the Twelfth day of Christmas
+            On the twelfth day of Christmas
             My true love gave to me:
             Twelve drummers drumming
             Eleven pipers piping
@@ -144,8 +140,8 @@ class UserAcceptanceTest {
             Five golden rings
             Four calling birds
             Three french hens
-            Two turtle doves
-            And a partridge in a pear tree.
+            Two turtle doves and
+            A partridge in a pear tree.
             """;
     }
 }
