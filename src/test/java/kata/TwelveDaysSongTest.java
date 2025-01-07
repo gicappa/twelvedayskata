@@ -16,7 +16,7 @@ class TwelveDaysSongTest {
 
     @Test
     void it_returns_the_first_verse() {
-        var actual = song.lyrics(1);
+        var actual = song.verse(1);
 
         assertThat(actual).isEqualTo(
             "On the first day of Christmas\nMy true love gave to me:\nA partridge in a pear tree.");
@@ -24,7 +24,7 @@ class TwelveDaysSongTest {
 
     @Test
     void it_returns_the_second_verse() {
-        var actual = song.lyrics(2);
+        var actual = song.verse(2);
 
         assertThat(actual).isEqualTo("""
             On the second day of Christmas
@@ -35,7 +35,7 @@ class TwelveDaysSongTest {
 
     @Test
     void it_returns_the_third_verse() {
-        var actual = song.lyrics(3);
+        var actual = song.verse(3);
 
         assertThat(actual).isEqualTo("""
             On the third day of Christmas
@@ -48,7 +48,7 @@ class TwelveDaysSongTest {
     @Test
     void it_returns_all_the_12_verse() {
         for(int i = 1; i <= 12; i++) {
-            var actual = song.lyrics(i);
+            var actual = song.verse(i);
             assertThat(actual).isNotBlank();
         }
     }

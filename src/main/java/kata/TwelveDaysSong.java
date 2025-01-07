@@ -10,16 +10,16 @@ public class TwelveDaysSong implements Song {
     @Override
     public String lyrics() {
         return IntStream.rangeClosed(1, 12)
-            .mapToObj(this::lyrics)
+            .mapToObj(this::verse)
             .collect(joining("\n\n"));
     }
 
     @Override
-    public String lyrics(int verseNum) {
+    public String verse(int number) {
         return """
             On the %s day of Christmas
             My true love gave to me:
-            %s""".formatted(toOrdinal(verseNum), allGiftsUntilDay(verseNum));
+            %s""".formatted(toOrdinal(number), allGiftsUntilDay(number));
     }
 
     private String allGiftsUntilDay(int dayNumber) {

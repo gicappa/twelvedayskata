@@ -4,5 +4,5 @@ public interface Song {
 
     String lyrics();
 
-    String lyrics(int verseNum);
+    String verse(int verseNum);
 }
