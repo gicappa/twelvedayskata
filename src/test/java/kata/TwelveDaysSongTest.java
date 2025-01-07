@@ -45,4 +45,12 @@ class TwelveDaysSongTest {
             A partridge in a pear tree.""");
     }
 
+    @Test
+    void it_returns_all_the_12_verse() {
+        for(int i = 1; i <= 12; i++) {
+            var actual = song.lyrics(i);
+            assertThat(actual).isNotBlank();
+        }
+    }
+
 }
