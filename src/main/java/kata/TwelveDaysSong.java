@@ -19,16 +19,15 @@ public class TwelveDaysSong implements Song {
         return """
             On the %s day of Christmas
             My true love gave to me:
-            %s""".formatted(toOrdinal(verseNum), numSongLines(verseNum));
-
+            %s""".formatted(toOrdinal(verseNum), allGiftsUntilDay(verseNum));
     }
 
-    private String numSongLines(int verseNum) {
-        if (verseNum == 1) {
-            return giftNumber(verseNum);
+    private String allGiftsUntilDay(int dayNumber) {
+        if (dayNumber == 1) {
+            return giftNumber(dayNumber);
         }
 
-        return giftNumber(verseNum) + "\n" + numSongLines(verseNum - 1);
+        return giftNumber(dayNumber) + "\n" + allGiftsUntilDay(dayNumber - 1);
     }
 
     private String giftNumber(int giftNumber) {
@@ -49,20 +48,12 @@ public class TwelveDaysSong implements Song {
     }
 
     private String toOrdinal(int cardinal) {
-        return switch (cardinal) {
-            case 1 -> "first";
-            case 2 -> "second";
-            case 3 -> "third";
-            case 4 -> "forth";
-            case 5 -> "fifth";
-            case 6 -> "sixth";
-            case 7 -> "seventh";
-            case 8 -> "eighth";
-            case 9 -> "ninth";
-            case 10 -> "tenth";
-            case 11 -> "eleventh";
-            case 12 -> "twelfth";
-            default -> "";
-        };
+        return List.of(
+                "first", "second", "third",
+                "forth", "fifth", "sixth",
+                "seventh", "eighth", "ninth",
+                "tenth", "eleventh", "twelfth")
+            .get(cardinal - 1);
     }
+
 }
