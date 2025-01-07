@@ -22,6 +22,7 @@
       -XX:MaxMetaspaceSize=1500m
       -Dnet.bytebuddy.experimental=true
       -XX:+EnableDynamicAgentLoading
+      -Xshare:off
     </argLine>
 
     <!-- Dependency versions -->
