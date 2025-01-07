@@ -26,8 +26,8 @@ public class TwelveDaysSong implements Song {
         };
     }
 
-    private String toOrdinal(int verseNum) {
-        return switch (verseNum) {
+    private String toOrdinal(int cardinal) {
+        return switch (cardinal) {
             case 1 -> "first";
             case 2 -> "second";
             case 3 -> "third";
