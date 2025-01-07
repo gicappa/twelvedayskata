@@ -20,26 +20,27 @@ public class TwelveDaysSong implements Song {
 
     private String numSongLines(int verseNum) {
         if (verseNum == 1) {
-            return giftList().getFirst();
+            return giftNumber(verseNum);
         }
 
-        return giftList().get(verseNum - 1) + "\n" + numSongLines(verseNum - 1);
+        return giftNumber(verseNum) + "\n" + numSongLines(verseNum - 1);
     }
 
-    private List<String> giftList() {
+    private String giftNumber(int giftNumber) {
         return List.of(
-            "A partridge in a pear tree.",
-            "Two turtle doves and",
-            "Three french hens",
-            "Four calling birds",
-            "Five golden rings",
-            "Six geese a-laying",
-            "Seven swans a-swimming",
-            "Eight maids a-milking",
-            "Nine ladies dancing",
-            "Ten lords a-leaping",
-            "Eleven pipers piping",
-            "Twelve drummers drumming");
+                "A partridge in a pear tree.",
+                "Two turtle doves and",
+                "Three french hens",
+                "Four calling birds",
+                "Five golden rings",
+                "Six geese a-laying",
+                "Seven swans a-swimming",
+                "Eight maids a-milking",
+                "Nine ladies dancing",
+                "Ten lords a-leaping",
+                "Eleven pipers piping",
+                "Twelve drummers drumming")
+            .get(giftNumber - 1);
     }
 
     private String toOrdinal(int cardinal) {
