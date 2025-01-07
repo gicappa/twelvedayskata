@@ -9,17 +9,20 @@ public class TwelveDaysSong implements Song {
 
     @Override
     public String lyrics(int verseNum) {
-        if (verseNum == 2) {
-            return """
-                    On the second day of Christmas
-                    My true love gave to me:
-                    Two turtle doves and
-                    A partridge in a pear tree.""";
-        }
+        var firstLine = switch (verseNum) {
+            case 2 -> "second";
+            default -> "first";
+        };
+
+        var secondLine = switch (verseNum) {
+            case 2 -> "Two turtle doves and\n";
+            default -> "";
+        };
 
         return """
-                On the first day of Christmas
-                My true love gave to me:
-                A partridge in a pear tree.""";
+            On the %s day of Christmas
+            My true love gave to me:
+            %s""".formatted(firstLine, secondLine) + "A partridge in a pear tree.";
+
     }
 }
