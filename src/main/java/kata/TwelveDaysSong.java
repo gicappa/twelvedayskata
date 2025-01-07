@@ -20,12 +20,11 @@ public class TwelveDaysSong implements Song {
     }
 
     private String numSongLines(int verseNum) {
-        return switch (verseNum) {
-            case 1 -> giftList().get(0);
-            case 2 -> giftList().get(1) + "\n" + numSongLines(1);
-            case 3 -> giftList().get(2) + "\n" + numSongLines(2);
-            default -> "";
-        };
+        if (verseNum == 1) {
+            return giftList().getFirst();
+        }
+
+        return giftList().get(verseNum - 1) + "\n" + numSongLines(verseNum - 1);
     }
 
     private List<String> giftList() {
