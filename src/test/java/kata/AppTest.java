@@ -116,7 +116,11 @@ class AppTest {
     }
 
     @Test
-    @Disabled
+    void it_returns_the_first_line() {
+        assertThat(App.tail(1)).isEqualTo("A partridge in a pear tree.\n");
+    }
+
+    @Test
     void verse_12_has_a_specific_tail() {
         var tail12 = tail(verses[11].split("\n"));
 
@@ -136,6 +140,11 @@ class AppTest {
             """);
     }
 
+    @Test
+    void it_return_the_last_line() {
+
+    }
+    
     String tail(String[] verse) {
         var tail = new StringBuilder();
 

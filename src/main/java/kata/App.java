@@ -26,20 +26,39 @@ public class App implements Runnable {
     }
 
     private static String verse(int number) {
-
         return """
             first line - %d
             second line
             %s""".formatted(number, tail(number));
     }
 
-    private static String tail(int number) {
-        var tail = new StringBuilder();
+    public static String tail(int number) {
+        var wholeTail = """
+            Twelve drummers drumming
+            Eleven pipers piping
+            Ten lords a-leaping
+            Nine ladies dancing
+            Eight maids a-milking
+            Seven swans a-swimming
+            Six geese a-laying
+            Five golden rings
+            Four calling birds
+            Three french hens
+            Two turtle doves and
+            A partridge in a pear tree.""";
 
-        for(var i = 1; i <= number; i++) {
-            tail.append("tail - ").append(i).append("\n");
+        var lines = wholeTail.split("\n");
+
+        var result = new StringBuilder();
+        for (var i = 12 - number; i < 12; i++) {
+            result.append(lines[i]);
+
+            if (i != 11) {
+                result.append("\n");
+            }
         }
-        return tail.toString();
+        result.append("\n");
+        return result.toString();
     }
 
     public static void main(String[] args) {
@@ -47,5 +66,4 @@ public class App implements Runnable {
 
         app.run();
     }
-
 }
