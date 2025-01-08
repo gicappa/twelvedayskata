@@ -87,7 +87,6 @@ class AppTest {
         assertThat(new HashSet<>(tails)).hasSize(12);
     }
 
-
     @Test
     @CanIgnoreReturnValue
     void each_tail_longer_by_one_line_then_the_previous_one() {
@@ -105,6 +104,26 @@ class AppTest {
                 assertThat(b).isEqualTo(a + 1);
                 return b;
             });
+    }
+
+    @Test
+    void verse_12_has_a_specific_tail() {
+        var tail12 = tail(verses[11].split("\n"));
+
+        assertThat(tail12).isEqualTo("""
+            Twelve drummers drumming
+            Eleven pipers piping
+            Ten lords a-leaping
+            Nine ladies dancing
+            Eight maids a-milking
+            Seven swans a-swimming
+            Six geese a-laying
+            Five golden rings
+            Four calling birds
+            Three french hens
+            Two turtle doves and
+            A partridge in a pear tree.
+            """);
     }
 
     String tail(String[] verse) {
