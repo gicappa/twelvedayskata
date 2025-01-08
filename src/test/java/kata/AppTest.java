@@ -14,18 +14,18 @@ import org.junit.jupiter.api.Test;
 class AppTest {
 
     private App app;
+    private String actual;
+    private String[] verses;
 
     @BeforeEach
     void beforeEach() {
         app = new App();
+        actual = collectStdOut(app);
+        verses = actual.split("\n\n");
     }
 
     @Test
     void it_returns_12_verses_separated_by_a_new_line() {
-        var actual = collectStdOut(app);
-
-        var verses = actual.split("\n\n");
-
         assertThat(verses).hasSize(12);
     }
     
