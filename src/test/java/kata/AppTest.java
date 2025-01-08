@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashSet;
+import org.assertj.core.util.CanIgnoreReturnValue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -74,11 +75,43 @@ class AppTest {
         assertThat(new HashSet<>(tails)).hasSize(12);
     }
 
+    @Test
+    void each_tail_is_different_from_the_other() {
+        var tails = new ArrayList<String>();
+
+        for (var verse : verses) {
+            var lines = verse.split("\n");
+            tails.add(tail(lines));
+        }
+
+        assertThat(new HashSet<>(tails)).hasSize(12);
+    }
+
+
+    @Test
+    @CanIgnoreReturnValue
+    void each_tail_longer_by_one_line_then_the_previous_one() {
+        var tails = new ArrayList<String>();
+
+        for (var verse : verses) {
+            var lines = verse.split("\n");
+            tails.add(tail(lines));
+        }
+
+        tails.stream()
+            .map(t -> t.split("\n"))
+            .map(t -> t.length)
+            .reduce((a, b) -> {
+                assertThat(b).isEqualTo(a + 1);
+                return b;
+            });
+    }
+
     String tail(String[] verse) {
         var tail = new StringBuilder();
 
         for (int i = 2; i < verse.length; i++) {
-            tail.append(verse[i]);
+            tail.append(verse[i]).append("\n");
         }
 
         return tail.toString();

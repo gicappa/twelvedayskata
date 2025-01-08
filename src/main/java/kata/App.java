@@ -28,10 +28,13 @@ public class App implements Runnable {
     private static String verse(int number) {
 
         return """
-            Hello World!%d
-            Hello World!
-            Hello World!%d
-            """.formatted(number, number);
+            first line - %d
+            second line
+            %s""".formatted(number, tail(number));
+    }
+
+    private static String tail(int number) {
+        return "tail\n".repeat(number);
     }
 
     public static void main(String[] args) {
