@@ -62,6 +62,28 @@ class AppTest {
         assertThat(new HashSet<>(secondLine)).hasSize(1);
     }
 
+    @Test
+    void each_verse_has_a_different_tail() {
+        var tails = new ArrayList<String>();
+
+        for (var verse : verses) {
+            var lines = verse.split("\n");
+            tails.add(tail(lines));
+        }
+
+        assertThat(new HashSet<>(tails)).hasSize(12);
+    }
+
+    String tail(String[] verse) {
+        var tail = new StringBuilder();
+
+        for (int i = 2; i < verse.length; i++) {
+            tail.append(verse[i]);
+        }
+
+        return tail.toString();
+    }
+
     @Disabled
     @Test
     void it_returns_the_whole_song() {

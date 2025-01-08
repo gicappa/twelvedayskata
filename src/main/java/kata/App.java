@@ -30,8 +30,8 @@ public class App implements Runnable {
         return """
             Hello World!%d
             Hello World!
-            Hello World!
-            """.formatted(number);
+            Hello World!%d
+            """.formatted(number, number);
     }
 
     public static void main(String[] args) {
