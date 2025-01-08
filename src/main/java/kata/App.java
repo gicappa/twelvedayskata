@@ -1,6 +1,9 @@
 package kata;
 
 import static java.lang.System.out;
+import static java.util.stream.Collectors.joining;
+
+import java.util.stream.IntStream;
 
 /**
  * Starting point of the application contaning the main function.
@@ -17,18 +20,18 @@ public class App implements Runnable {
     }
 
     private static String song() {
-        var song = new StringBuilder();
+        return IntStream.rangeClosed(1, 12)
+            .mapToObj(App::verse)
+            .collect(joining("\n\n"));
+    }
 
-        for (int i = 0; i < 12; i++) {
-            song.append("Hello World!\n");
-            song.append("Hello World!\n");
-            song.append("Hello World!\n");
+    private static String verse(int number) {
 
-            if (i < 11) {
-                song.append("\n");
-            }
-        }
-        return song.toString();
+        return """
+            Hello World!
+            Hello World!
+            Hello World!
+            """;
     }
 
     public static void main(String[] args) {
