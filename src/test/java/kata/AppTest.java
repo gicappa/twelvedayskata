@@ -17,13 +17,12 @@ import org.junit.jupiter.api.Test;
 class AppTest {
 
     private App app;
-    private String actual;
     private String[] verses;
 
     @BeforeEach
     void beforeEach() {
         app = new App();
-        actual = collectStdOut(app);
+        var actual = collectStdOut(app);
         verses = actual.split("\n\n");
     }
 
@@ -88,7 +87,7 @@ class AppTest {
     }
 
     @Test
-    @CanIgnoreReturnValue
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     void each_tail_longer_by_one_line_then_the_previous_one() {
         var tails = new ArrayList<String>();
 
