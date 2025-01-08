@@ -42,13 +42,24 @@ class AppTest {
     @Test
     void each_verse_has_a_different_first_line() {
         var firstLines = new ArrayList<String>();
-        
+
         for (var verse : verses) {
             var lines = verse.split("\n");
             firstLines.add(lines[0]);
         }
         assertThat(new HashSet<>(firstLines)).hasSize(12);
 
+    }
+
+    @Test
+    void each_verse_has_the_same_second_line() {
+        var secondLine = new ArrayList<String>();
+
+        for (var verse : verses) {
+            var lines = verse.split("\n");
+            secondLine.add(lines[1]);
+        }
+        assertThat(new HashSet<>(secondLine)).hasSize(1);
     }
 
     @Disabled
