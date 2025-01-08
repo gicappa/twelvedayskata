@@ -28,7 +28,15 @@ class AppTest {
     void it_returns_12_verses_separated_by_a_new_line() {
         assertThat(verses).hasSize(12);
     }
-    
+
+    @Test
+    void each_verse_must_count_at_least_three_lines() {
+        for (var verse : verses) {
+            var lines = verse.split("\n");
+            assertThat(lines).hasSizeGreaterThan(2);
+        }
+    }
+
     @Disabled
     @Test
     void it_returns_the_whole_song() {

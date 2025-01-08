@@ -19,9 +19,14 @@ public class App implements Runnable {
     private static String song() {
         var song = new StringBuilder();
 
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 12; i++) {
             song.append("Hello World!\n");
-            song.append("\n");
+            song.append("Hello World!\n");
+            song.append("Hello World!\n");
+
+            if (i < 11) {
+                song.append("\n");
+            }
         }
         return song.toString();
     }
