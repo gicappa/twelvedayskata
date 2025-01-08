@@ -22,7 +22,7 @@ public class App implements Runnable {
     private static String song() {
         return IntStream.rangeClosed(1, 12)
             .mapToObj(App::verse)
-            .collect(joining("\n\n"));
+            .collect(joining("\n"));
     }
 
     private static String verse(int number) {
