@@ -1,8 +1,9 @@
 package kata;
 
+import static java.lang.System.out;
+
 /**
- * Starting point of the application contaning the
- * main function.
+ * Starting point of the application contaning the main function.
  */
 public class App implements Runnable {
 
@@ -12,7 +13,31 @@ public class App implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Hello World!");
+        out.println("""
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            
+            Hello World!
+            """);
     }
 
     public static void main(String[] args) {

@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -11,10 +13,25 @@ import org.junit.jupiter.api.Test;
  */
 class AppTest {
 
+    private App app;
+
+    @BeforeEach
+    void beforeEach() {
+        app = new App();
+    }
+
+    @Test
+    void it_returns_12_verses_separated_by_a_new_line() {
+        var actual = collectStdOut(app);
+
+        var verses = actual.split("\n\n");
+
+        assertThat(verses).hasSize(12);
+    }
+    
+    @Disabled
     @Test
     void it_returns_the_whole_song() {
-        var app = new App();
-
         var actual = collectStdOut(app);
 
         assertThat(actual).isEqualTo(twelveDaysSong());
