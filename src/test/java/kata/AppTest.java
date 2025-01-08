@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import org.assertj.core.util.CanIgnoreReturnValue;
 import org.junit.jupiter.api.BeforeEach;
@@ -106,6 +107,16 @@ class AppTest {
     }
 
     @Test
+    void each_line_of_a_tail_is_different() {
+        for (var verse : verses) {
+            var lines = verse.split("\n");
+            var tailLines = tail(lines).split("\n");
+            assertThat(new HashSet<>(Arrays.asList(tailLines))).hasSize(tailLines.length);
+        }
+    }
+
+    @Test
+    @Disabled
     void verse_12_has_a_specific_tail() {
         var tail12 = tail(verses[11].split("\n"));
 

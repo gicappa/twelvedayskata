@@ -34,7 +34,12 @@ public class App implements Runnable {
     }
 
     private static String tail(int number) {
-        return "tail\n".repeat(number);
+        var tail = new StringBuilder();
+
+        for(var i = 1; i <= number; i++) {
+            tail.append("tail - ").append(i).append("\n");
+        }
+        return tail.toString();
     }
 
     public static void main(String[] args) {
